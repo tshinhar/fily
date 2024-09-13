@@ -12,7 +12,7 @@ def calculate_file_hash(file_path):
 
 def find_duplicate_files(root_folder):
     """Traverses through the root folder and identifies duplicate files."""
-    print(f"looking for duplicate files under {root_folder}...")
+    print(f"Looking for duplicate files under {root_folder}...")
     duplicates = {}
     for folder_path, _, file_names in os.walk(root_folder):
         for file_name in file_names:
@@ -32,14 +32,14 @@ def remove_duplicate_files(duplicates, confirmed=False):
             for file_path in file_paths[1:]:
                 delete_flag = confirmed
                 if not confirmed:
-                    confirmation = input("delete?")
+                    confirmation = input("Delete?")
                     if confirmation.lower() in ["yes", "y", "ok"]:
                         delete_flag = True
                 if delete_flag:
                     os.remove(file_path)
                     print(f"{file_path} has been deleted.\n")
                 else:
-                    print("duplicate file was not deleted")
+                    print("Duplicate file was not deleted")
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Remove duplicate files")
