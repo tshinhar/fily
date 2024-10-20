@@ -1,6 +1,5 @@
 import os
 import hashlib
-import argparse
 
 def calculate_file_hash(file_path):
     """Calculates the hash value of a file's content."""
