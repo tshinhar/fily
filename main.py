@@ -18,14 +18,15 @@ if __name__ == '__main__':
         "-s", "--smart", action="store_true", help="enable smart orginazation"
     )
     parser.add_argument(
-        "-n", "--threads", action="store_true", help="enable smart orginazation"
+        "-n", "--threads", action="store_true", help="set number of threads for orginazation"
     )
     parser.add_argument("root_path", nargs="+", help="Path to the root directory")
     # Parse the command-line arguments
     args = parser.parse_args()
 
     for path in args.root_path:
-        if args.remove:
+        arg_lst = args._get_args()
+        if args.remove or not args._get_args():
             duplicates = find_duplicate_files(path)
             remove_duplicate_files(duplicates, args.yes)
         if args.orgenize:
