@@ -1,5 +1,5 @@
 # Fily
-a cli tool from file managment.
+a cli tool for file managment.
 
 the tool currently supports orginzing all files in a given directory as well as removing all duplicate files under the given root directory
 to use, simpley run the python code and pass it the root directory you want to perform the operation on, as well as the wanted option.
